@@ -1,0 +1,63 @@
+{
+  "executedAt": "2026-09-05T11:13:10.339Z",
+  "channel": "msedge",
+  "protocol": "file:",
+  "checks": [
+    {
+      "name": "file:// page loads six independently enhanced examples",
+      "passed": true
+    },
+    {
+      "name": "project preview follows keyboard focus and mouse hover",
+      "passed": true
+    },
+    {
+      "name": "segmented control supports Arrow, Home, End and roving focus",
+      "passed": true
+    },
+    {
+      "name": "native disclosure opens with keyboard and preserves focus",
+      "passed": true
+    },
+    {
+      "name": "direct tab fragment and later hash changes select the corresponding visible panel",
+      "passed": true
+    },
+    {
+      "name": "local submission shows pending, success, failure and retry without losing focus",
+      "passed": true
+    },
+    {
+      "name": "list supports successive hides, empty state and LIFO undo with focus recovery",
+      "passed": true
+    },
+    {
+      "name": "reader progress and chapter navigation stay inside the reading region",
+      "passed": true
+    },
+    {
+      "name": "desktop has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "390px touch layout: no overflow, tap preview, tap tabs, controls meet 44px height",
+      "passed": true
+    },
+    {
+      "name": "reduced motion disables indicator/disclosure transitions and busy animation",
+      "passed": true
+    },
+    {
+      "name": "without JavaScript all previews/panels/list items remain readable and disclosure works",
+      "passed": true
+    },
+    {
+      "name": "no runtime errors or outgoing network requests",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "outboundRequests": [],
+  "passed": true,
+  "count": 13
+}

@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"finding_count\": 0,\n  \"findings\": [],\n  \"slide_count\": 4,\n  \"slide_size_in\": [\n    13.3333,\n    7.5\n  ],\n  \"warning_count\": 0,\n  \"warnings\": []\n}\n",
+  "stderr": ""
+}

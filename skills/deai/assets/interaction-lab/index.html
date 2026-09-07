@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>交互手记 — deai studio</title>
+  <meta name="description" content="六种原创离线交互样例。观察状态、试用键盘，再决定是否需要动画。">
+  <link rel="stylesheet" href="styles.css">
+  <script src="lab.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#experiments">跳到交互样例</a>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="wordmark" href="#top">deai<span>studio</span></a>
+      <span>原创代码样例 · 可离线使用</span>
+      <a href="README.md">使用说明 <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-main">
+          <p class="edition">INTERACTION NOTES / 01</p>
+          <h1 id="page-title">界面，<br>发生之后<span class="title-period">。</span></h1>
+          <p class="intro-deck">选择之后看见回应，等待之中知道进度，<br class="desktop-break">操作失误还能回头。</p>
+        </div>
+        <aside class="intro-aside">
+          <span class="note-mark" aria-hidden="true">↳</span>
+          <p>这里有六段可操作的界面。<br>每段只处理一个具体问题。</p>
+          <p class="muted">页面中的项目、清单与保存结果均为演示数据。所有操作只在当前页面生效，不会向外发送信息。</p>
+          <div class="motion-note"><span class="motion-dot" aria-hidden="true"></span><span id="motion-preference">跟随系统的动态效果偏好</span></div>
+        </aside>
+      </section>
+      <nav class="index-nav" aria-label="六个交互样例">
+        <a href="#preview-example"><span>01</span> 预览</a>
+        <a href="#segment-example"><span>02</span> 切换</a>
+        <a href="#disclosure-example"><span>03</span> 展开</a>
+        <a href="#submit-example"><span>04</span> 回应</a>
+        <a href="#undo-example"><span>05</span> 撤销</a>
+        <a href="#reading-example"><span>06</span> 阅读</a>
+      </nav>
+      <noscript><p class="fallback-notice">JavaScript 未启用。全部示例内容仍可阅读；展开说明与章节链接仍可使用。保存和隐藏演示需要 JavaScript。</p></noscript>
+      <div id="experiments">
+        <section class="experiment" id="preview-example" aria-labelledby="preview-title">
+          <header class="experiment-heading">
+            <p class="section-number">01 / 选择与预览</p>
+            <h2 id="preview-title">先看一眼，<br>再走进去。</h2>
+            <p>索引保留上下文。鼠标经过、键盘聚焦或触屏点击，右侧预览同步更新。</p>
+            <p class="pattern-note">适合：作品索引、文件选择、素材目录。</p>
+          </header>
+          <div class="experiment-body">
+            <div class="project-browser">
+              <div class="project-index" aria-label="选择演示项目">
+                <button id="project-1" class="project-link" type="button" data-project="preview-1" disabled><span class="project-meta">编辑 / 展览</span><strong>纸上展览</strong><span class="project-description">一份关于留白的虚构展览册。</span><span class="project-arrow" aria-hidden="true">↗</span></button>
+                <button id="project-2" class="project-link" type="button" data-project="preview-2" disabled><span class="project-meta">空间 / 书店</span><strong>沿河书店</strong><span class="project-description">把书架与一段步行路线排在一起。</span><span class="project-arrow" aria-hidden="true">↗</span></button>
+                <button id="project-3" class="project-link" type="button" data-project="preview-3" disabled><span class="project-meta">物件 / 档案</span><strong>一间工作室</strong><span class="project-description">三件日常工具的轮廓练习。</span><span class="project-arrow" aria-hidden="true">↗</span></button>
+              </div>
+              <div class="preview-stage" id="project-preview">
+                <figure id="preview-1" class="preview-figure">
+                  <div class="artwork artwork-paper" role="img" aria-label="原创几何示意：蓝色圆形与纸页错位叠放">
+                    <div class="paper-sheet"><span>空<br>间</span><i></i><small>THE SPACE BETWEEN</small></div>
+                    <div class="paper-caption">A STUDY OF SPACE<br>VOL. 01 — 2026</div>
+                  </div>
+                  <figcaption><strong>纸上展览</strong><span>原创 CSS 示意 / 编辑设计</span></figcaption>
+                </figure>
+                <figure id="preview-2" class="preview-figure">
+                  <div class="artwork artwork-map" role="img" aria-label="原创几何示意：弯曲河道与三排书架构成的平面图">
+                    <svg viewBox="0 0 440 300" aria-hidden="true"><path d="M-20 258 C105 270 98 75 237 95 S321 263 465 168" fill="none" stroke="#426e87" stroke-width="32"/><g fill="#e7e4d8" stroke="#294937" stroke-width="2"><path d="M44 38h128v25H44zM44 78h100v25H44zM254 210h128v25H254zM254 250h128v25H254z"/></g><path d="M205 130l32 38-44 35" fill="none" stroke="#dc653c" stroke-width="4"/><circle cx="199" cy="190" r="7" fill="#dc653c"/></svg>
+                    <span class="map-label">书店在河边。<small>A WALK, A BOOK.</small></span>
+                  </div>
+                  <figcaption><strong>沿河书店</strong><span>原创 SVG 示意 / 空间路线</span></figcaption>
+                </figure>
+                <figure id="preview-3" class="preview-figure">
+                  <div class="artwork artwork-objects" role="img" aria-label="原创几何示意：直尺、圆卷与铅笔排列在深色台面">
+                    <div class="object-ruler"></div><div class="object-roll"></div><div class="object-pencil"></div><span>OBJECT<br>REGISTER</span><small>001 — 003</small>
+                  </div>
+                  <figcaption><strong>一间工作室</strong><span>原创 CSS 示意 / 物件档案</span></figcaption>
+                </figure>
+              </div>
+            </div>
+            <p class="interaction-hint">试一试：Tab 聚焦项目，或直接点选。预览不会自动轮播。</p>
+          </div>
+        </section>
+
+        <section class="experiment" id="segment-example" aria-labelledby="segment-title">
+          <header class="experiment-heading"><p class="section-number">02 / 相邻视图</p><h2 id="segment-title">改变视角，<br>不丢位置。</h2><p>连续指示条交代选中项的移动。内容切换立即发生，不必等动画结束。</p><p class="pattern-note">适合：相关视图、范围选择、设置分组。</p></header>
+          <div class="experiment-body">
+            <div class="segment-list" aria-label="设计观察角度">
+              <span class="segment-indicator" aria-hidden="true" hidden></span>
+              <a href="#panel-context" id="tab-context" class="segment" data-panel="panel-context">内容</a>
+              <a href="#panel-structure" id="tab-structure" class="segment" data-panel="panel-structure">结构</a>
+              <a href="#panel-behavior" id="tab-behavior" class="segment" data-panel="panel-behavior">行为</a>
+            </div>
+            <div class="segment-panels">
+              <section class="segment-panel" id="panel-context"><p class="panel-kicker">从对象开始</p><h3>这页究竟在说什么？</h3><p>先写出真实的对象、限制与下一步。没有产品依据的数字、口号和徽章，无法因为排版精致就变得可信。</p><div class="panel-foot"><span>保留具体名词</span><span>说明实际用途</span></div></section>
+              <section class="segment-panel" id="panel-structure"><p class="panel-kicker">让关系可见</p><h3>哪些信息应该放在一起？</h3><p>同一组数据不一定需要六个容器。对齐、间距与分隔线已经能说明关系；只有需要独立操作的单元才另作处理。</p><div class="panel-foot"><span>先分组再装饰</span><span>用密度表达层级</span></div></section>
+              <section class="segment-panel" id="panel-behavior"><p class="panel-kicker">把结果说清楚</p><h3>操作以后，发生了什么？</h3><p>选中、等待、失败与完成各有明确的表现。动效可以帮助理解变化，但按钮名称和状态文字本身就应交代结果。</p><div class="panel-foot"><span>键盘也能完成</span><span>中断后可以恢复</span></div></section>
+            </div>
+            <p class="interaction-hint">试一试：聚焦切换项后按 ← →，Home 回到首项，End 到末项。</p>
+          </div>
+        </section>
+
+        <section class="experiment" id="disclosure-example" aria-labelledby="disclosure-title">
+          <header class="experiment-heading"><p class="section-number">03 / 就地展开</p><h2 id="disclosure-title">多解释一点，<br>不另开一页。</h2><p>主要判断先呈现，推导过程按需展开。保留浏览位置，也不把重要限制藏起来。</p><p class="pattern-note">适合：设计理由、参数解释、补充资料。</p></header>
+          <div class="experiment-body">
+            <div class="decision-intro"><span class="decision-mark" aria-hidden="true">“</span><p>一张清楚的表，<br>有时就是最好的界面。</p></div>
+            <details id="design-detail">
+              <summary id="detail-summary"><span>为什么这里不需要再套一层卡片？</span><span class="disclosure-symbol" aria-hidden="true">+</span></summary>
+              <div class="detail-copy"><p>因为这些条目属于同一段论证。细分隔线已经交代边界，重复的底色和阴影会把本来连续的阅读拆散。</p><p>这只是当前内容的选择。如果已有品牌使用卡片，或者每项确实有独立的操作和状态，就应保留那些容器。</p><ul><li>先确认分组是否清楚。</li><li>再检查键盘顺序与内容密度。</li><li>最后决定是否需要额外的视觉边界。</li></ul></div>
+            </details>
+            <p class="interaction-hint">原生 details：Enter / 空格展开；JavaScript 关闭后依然可用。</p>
+          </div>
+        </section>
+
+        <section class="experiment" id="submit-example" aria-labelledby="submit-title" data-state="idle">
+          <header class="experiment-heading"><p class="section-number">04 / 明确反馈</p><h2 id="submit-title">等待有交代，<br>失败有去处。</h2><p>同一个操作显示不同结果，焦点留在按钮上，方便再次尝试。</p><p class="pattern-note">适合：保存设置、任务启动、表单提交。</p></header>
+          <div class="experiment-body">
+            <p class="demo-label">本地状态演示 · 不保存文件，不连接服务器</p>
+            <fieldset id="outcome-options"><legend>选择这次模拟的结果</legend><label><input id="outcome-success" name="outcome" type="radio" value="success" checked> 完成</label><label><input id="outcome-failure" name="outcome" type="radio" value="failure"> 失败</label></fieldset>
+            <div class="submit-row"><button id="submit-demo" class="primary-button" type="button" disabled><span class="status-symbol" aria-hidden="true">↗</span><span class="submit-label">试运行保存</span></button><p id="submit-status" role="status" aria-live="polite" aria-atomic="true">尚未开始。选择结果后运行演示。</p></div>
+            <p class="js-note">此状态演示需要 JavaScript；没有真实提交操作。</p>
+            <p class="interaction-hint">处理中约 0.9 秒，仅用于观察状态。不会显示编造的上传百分比。</p>
+          </div>
+        </section>
+
+        <section class="experiment" id="undo-example" aria-labelledby="undo-title">
+          <header class="experiment-heading"><p class="section-number">05 / 可逆操作</p><h2 id="undo-title">先让开，<br>也能再回来。</h2><p>从视图中隐藏一项，立即给出撤销。连续操作按相反顺序恢复，没有倒计时。</p><p class="pattern-note">适合：收件箱、素材筛选、临时清单。</p></header>
+          <div class="experiment-body">
+            <div class="list-heading"><h3>工作台上的三个片段</h3><span>演示清单</span></div>
+            <ul id="archive-list" class="archive-list">
+              <li data-item="map" data-label="街区手绘"><div><strong>街区手绘</strong><span>空间观察 / 纸上路线</span></div><button type="button" data-hide="map" hidden>隐藏<span class="sr-only">街区手绘</span></button></li>
+              <li data-item="type" data-label="字形收集"><div><strong>字形收集</strong><span>编辑练习 / 日常招牌</span></div><button type="button" data-hide="type" hidden>隐藏<span class="sr-only">字形收集</span></button></li>
+              <li data-item="light" data-label="日光观察"><div><strong>日光观察</strong><span>物件记录 / 下午三点</span></div><button type="button" data-hide="light" hidden>隐藏<span class="sr-only">日光观察</span></button></li>
+            </ul>
+            <p id="list-empty" class="empty-note" hidden>当前视图已清空。下面的撤销可以逐项恢复。</p>
+            <div class="undo-feedback"><p id="undo-status" role="status" aria-live="polite" aria-atomic="true">全部 3 项可见。</p><button type="button" id="undo-button" class="text-button" hidden>撤销</button></div>
+            <p class="js-note">JavaScript 未启用时，清单保留全部内容。</p>
+            <p class="interaction-hint">“隐藏”只影响当前页面；刷新会恢复。这里没有删除文件。</p>
+          </div>
+        </section>
+
+        <section class="experiment" id="reading-example" aria-labelledby="reading-title">
+          <header class="experiment-heading"><p class="section-number">06 / 阅读定位</p><h2 id="reading-title">知道读到哪，<br>自己决定速度。</h2><p>进度只对应右侧这段文字。页面滚动不被接管，章节链接始终可以直接使用。</p><p class="pattern-note">适合：文档、长篇说明、产品原理。</p></header>
+          <div class="experiment-body">
+            <div class="reader-toolbar"><nav id="chapter-nav" aria-label="阅读区章节"><a href="#chapter-1">对象</a><a href="#chapter-2">层次</a><a href="#chapter-3">回应</a></nav><span id="reading-value">阅读手记</span></div>
+            <progress id="reading-progress" max="100" value="0" aria-label="阅读区滚动进度" hidden></progress>
+            <div class="reader" id="reader" role="region" aria-label="可滚动的阅读手记" tabindex="0">
+              <article>
+                <section class="reader-chapter"><p class="chapter-number">第一节</p><h3 id="chapter-1" tabindex="-1">先认清对象。</h3><p>同样是首页，书店、硬件工具与内部管理系统，应该让人先看到的东西并不一样。先找到那个具体对象，才有理由决定画面的重心。</p><p>如果在介绍一本书，可以看见纸张与段落；如果在解释设备，可以看见操作和真实输出。视觉表达应该从这些线索长出来，而不是先选一种流行风格，再把内容塞进去。</p><p>已有品牌也是对象的一部分。熟悉的颜色、布局或字体不需要仅因常见就被推翻。真正要检查的是：它们在当前页面是否把事情说清楚。</p></section>
+                <section class="reader-chapter"><p class="chapter-number">第二节</p><h3 id="chapter-2" tabindex="-1">再安排层次。</h3><p>层次不只来自字号。句子的长度、信息的距离、内容的密度，以及一段空白出现的位置，都在安排阅读节奏。</p><p>把相关内容靠近，把不同任务分开。一页里如果每个模块都用同样大的标题、同样的边框和同样的按钮，重要的东西反而很难被辨认。</p><p>这个样例使用细线串起六个实验，但这并不是对所有项目的要求。需要快速扫描大量独立记录时，卡片或者表格都可能是更好的选择。形式要服从内容关系。</p></section>
+                <section class="reader-chapter"><p class="chapter-number">第三节</p><h3 id="chapter-3" tabindex="-1">最后补齐回应。</h3><p>点击按钮只是开始。用户还需要知道请求有没有发出、结果是什么，以及哪里可以修改或者重试。只有成功动画的界面，并没有完成整个流程。</p><p>可以先关掉动画，再试一次。如果此时选中项、状态与下一步仍然清楚，动效才有一个可靠的基础。重新打开后，每个变化只需解释必要的关系。</p><p>页面的个性来自这些有依据的决定：哪些地方保持安静，哪些地方做得鲜明，哪些地方允许用户回头。它们不需要共同套用一种“去 AI”外观。</p><p class="reader-end">本段结束。你可以用章节链接返回，也可以继续向下浏览页面。</p></section>
+              </article>
+            </div>
+            <p class="interaction-hint">点击章节，或聚焦阅读区后使用方向键 / Page Down。进度不会逐次打断读屏。</p>
+          </div>
+        </section>
+      </div>
+      <footer class="page-footer"><p>保留品牌，解释变化，给人回头的余地。</p><div><span>deai studio · 六种原创交互</span><a href="#top">回到开头 ↑</a></div></footer>
+    </main>
+  </div>
+</body>
+</html>

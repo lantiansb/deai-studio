@@ -1,0 +1,146 @@
+{
+  "scope": "Fictional test scenes, unrelated to EEBadge business",
+  "pptx": {
+    "file": "pilot-review.pptx",
+    "bytes": 118368,
+    "sha256": "e72ed0c4a0a29bf6b226be5372a97267dc008c96320647d4cd66de489118f39b",
+    "zip_crc": "pass",
+    "xml_parts_parsed": 34,
+    "missing_internal_targets": [],
+    "slide_count": 4,
+    "slides": [
+      {
+        "part": "ppt/slides/slide1.xml",
+        "text": [
+          "新预约表：申请再观察 4 周",
+          "虚构测试场景 · 内部试点汇报    1 / 4",
+          "登记时长中位数",
+          "7 分钟 → 5 分钟",
+          "上线前与上线后的记录出现差异。",
+          "目前仅观察 2 周，且无对照组。",
+          "这些记录不能确定变化由新预约表引起。"
+        ],
+        "native_text_runs": 7,
+        "native_tables": 0,
+        "native_charts": 0,
+        "pictures": 0
+      },
+      {
+        "part": "ppt/slides/slide2.xml",
+        "text": [
+          "回复门店与使用门店分别记录",
+          "虚构测试场景 · 内部试点汇报    2 / 4",
+          "记录项目",
+          "门店数",
+          "试点涉及门店",
+          "20 家",
+          "已回复门店",
+          "12 家",
+          "使用新预约表的门店",
+          "8 家",
+          "12 家回复门店与 8 家使用门店的重合情况未知。"
+        ],
+        "native_text_runs": 11,
+        "native_tables": 1,
+        "native_charts": 0,
+        "pictures": 0
+      },
+      {
+        "part": "ppt/slides/slide3.xml",
+        "text": [
+          "单次登记中位数由 7 分钟变为 5 分钟",
+          "虚构测试场景 · 内部试点汇报    3 / 4",
+          "中位数相差",
+          "2 分钟",
+          "7 − 5 = 2",
+          "仅描述数值差异。",
+          "观察仅 2 周，无对照组；登记样本量与测量口径未提供。"
+        ],
+        "native_text_runs": 7,
+        "native_tables": 0,
+        "native_charts": 1,
+        "pictures": 0
+      },
+      {
+        "part": "ppt/slides/slide4.xml",
+        "text": [
+          "延长观察的申请",
+          "虚构测试场景 · 内部试点汇报    4 / 4",
+          "再观察 4 周",
+          "现有依据",
+          "观察期只有 2 周，且无对照组。",
+          "当前数据不足以确定变化原因。",
+          "建议补充的记录",
+          "回复与使用门店的对应关系；",
+          "登记时长的样本信息与测量口径。",
+          "延长观察本身也不能建立因果关系。"
+        ],
+        "native_text_runs": 10,
+        "native_tables": 0,
+        "native_charts": 0,
+        "pictures": 0
+      }
+    ],
+    "chart_categories": [
+      "上线前",
+      "上线后"
+    ],
+    "chart_values": [
+      "7",
+      "5"
+    ],
+    "embedded_workbooks": [
+      "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx"
+    ],
+    "embedded_workbook_numbers": [
+      "7",
+      "5"
+    ],
+    "native_chart_and_workbook_values_match": true
+  },
+  "docx": {
+    "file": "website-maintenance-scope.docx",
+    "bytes": 37110,
+    "sha256": "07f933fce8e4b4e2f448b25eba5d80132271a06166f821b57aaaea29063bc358",
+    "zip_crc": "pass",
+    "xml_parts_parsed": 16,
+    "missing_internal_targets": [],
+    "paragraphs": [
+      "网站维护服务范围",
+      "虚构测试场景",
+      "本说明列明网站维护的服务内容与范围边界。",
+      "包含的服务",
+      "内容更新。",
+      "依赖检查：每月一次。",
+      "不包含的服务",
+      "新功能开发不在本维护范围内。",
+      "紧急故障",
+      "紧急故障优先排查，未承诺响应时间。",
+      "商务信息",
+      "本说明未列明报价和签约日期。"
+    ],
+    "semantic_heading_count": 4,
+    "native_body_paragraphs": 12,
+    "inline_images": 0,
+    "python_docx_reopen": "pass",
+    "page_size": "Letter portrait",
+    "designed_page_count": 1,
+    "rendered_page_count": null,
+    "actual_pagination": "not verified; no document renderer used"
+  },
+  "rendering": {
+    "status": "not verified",
+    "reason": "Bundled runtime has no Office/LibreOffice renderer. No substitute rendering route used."
+  },
+  "office_application_edit_save_reopen": "not verified",
+  "bundled_checks": {
+    "package_integrity": {
+      "exit_code": 0,
+      "evidence": "package_integrity.json"
+    },
+    "layout_geometry": {
+      "exit_code": 0,
+      "evidence": "layout_geometry.json"
+    }
+  }
+}

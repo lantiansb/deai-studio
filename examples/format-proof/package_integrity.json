@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"chart_count\": 1,\n  \"claim_boundary\": \"Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.\",\n  \"finding_count\": 0,\n  \"findings\": [],\n  \"notes_parts_skipped\": 4,\n  \"relationship_part_count\": 14,\n  \"slide_count\": 4,\n  \"status\": \"pass\"\n}\n",
+  "stderr": ""
+}

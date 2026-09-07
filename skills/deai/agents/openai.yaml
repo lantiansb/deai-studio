@@ -1,0 +1,6 @@
+interface:
+  display_name: "去 AI 味"
+  short_description: "让文字、图片、前端、PPT与文档按内容作出具体创作取舍"
+  default_prompt: "使用 $deai 根据当前资料制作产物，减少模板感，保留事实与我的风格。"
+policy:
+  allow_implicit_invocation: true
