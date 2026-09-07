@@ -6,4 +6,4 @@
 - Content-first direction, factual preservation, project-scoped preferences and medium-specific review.
 - Curated research and interaction-library references with license distinctions.
 - Original offline interaction examples and representative skill trials.
-- Relative-path release packaging and local Codex installation validation.
+- Relative-path, reproducible release packaging and local Codex installation validation.

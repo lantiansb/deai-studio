@@ -13,6 +13,7 @@ from urllib.parse import unquote
 DIRECTORIES = {'skills', 'assets', 'docs', 'examples', 'scripts', 'tests', '.codex-plugin'}
 ROOT_FILES = {'README.md', 'README.en.md', 'LICENSE', 'NOTICE.md', 'CHANGELOG.md'}
 EXTENSIONS = {'.md', '.json', '.yaml', '.yml', '.svg', '.html', '.css', '.js', '.mjs', '.cjs', '.py', '.txt', '.png', '.pptx', '.docx', '.pdf'}
+ARCHIVE_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 
 
 class HTMLReferences(HTMLParser):
@@ -102,6 +103,14 @@ def validate(root: Path):
     return manifest, paths
 
 
+def write_entry(archive: zipfile.ZipFile, name: str, content: bytes | str):
+    info = zipfile.ZipInfo(name, ARCHIVE_TIMESTAMP)
+    info.compress_type = zipfile.ZIP_DEFLATED
+    info.create_system = 3
+    info.external_attr = 0o100644 << 16
+    archive.writestr(info, content)
+
+
 def build(root: Path, output: Path):
     manifest, paths = validate(root)
     root, output = root.resolve(), output.resolve()
@@ -131,9 +140,9 @@ codex plugin add {name}@{name}
 '''
     with zipfile.ZipFile(archive, 'x', compression=zipfile.ZIP_DEFLATED) as z:
         for path in paths:
-            z.write(path, f'{prefix}/plugins/{name}/{path.relative_to(root).as_posix()}')
-        z.writestr(f'{prefix}/.agents/plugins/marketplace.json', json.dumps(market, ensure_ascii=False, indent=2) + '\n')
-        z.writestr(f'{prefix}/INSTALL.md', installation)
+            write_entry(z, f'{prefix}/plugins/{name}/{path.relative_to(root).as_posix()}', path.read_bytes())
+        write_entry(z, f'{prefix}/.agents/plugins/marketplace.json', json.dumps(market, ensure_ascii=False, indent=2) + '\n')
+        write_entry(z, f'{prefix}/INSTALL.md', installation)
     return archive
 
 

@@ -1,9 +1,11 @@
 import importlib.util
+import hashlib
 import json
 import tempfile
 import unittest
 import zipfile
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('build_release', ROOT / 'scripts' / 'build_release.py')
@@ -97,6 +99,17 @@ class ReleaseTests(unittest.TestCase):
             (assets / 'styles.css').write_text('.icon { background-image: url(data:image/svg+xml;base64,PHN2Zz4=); }')
             (assets / 'module.js').write_text('import { readFile } from "node:fs"; import thing from "some-package";')
             release.validate(root)
+
+    def test_release_is_reproducible_across_build_times(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / 'plugin'
+            root.mkdir()
+            self.fixture(root)
+            with patch.object(release.zipfile.time, 'localtime', return_value=(2025, 1, 2, 3, 4, 5, 3, 2, -1)):
+                first = release.build(root, Path(td) / 'first')
+            with patch.object(release.zipfile.time, 'localtime', return_value=(2026, 6, 7, 8, 9, 10, 6, 158, -1)):
+                second = release.build(root, Path(td) / 'second')
+            self.assertEqual(hashlib.sha256(first.read_bytes()).digest(), hashlib.sha256(second.read_bytes()).digest())
 
 
 if __name__ == '__main__':
